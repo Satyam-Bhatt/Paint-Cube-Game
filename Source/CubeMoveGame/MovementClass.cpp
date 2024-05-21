@@ -217,6 +217,9 @@ void AMovementClass::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	CurveTimeline.TickTimeline(DeltaTime);
+
+	FVector Location = Camera->GetComponentLocation();
+	UE_LOG(LogTemp, Warning, TEXT("Camera Loaction: %s"), *Camera->GetComponentLocation().ToString());
 }
 
 FVector AMovementClass::PivotLocation(float HAxis, float VAxis)
